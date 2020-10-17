@@ -9,6 +9,12 @@
 #
 FactoryBot.define do
   factory :category do
-    name { 'Category name' }
+    name { 'Nutritional supplements' }
+
+    trait :with_products do
+      after(:build) do |category|
+        category.products = build_list(:product, 5)
+      end
+    end
   end
 end
