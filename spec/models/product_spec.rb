@@ -12,6 +12,11 @@
 require 'rails_helper'
 
 RSpec.describe Product, type: :model do
+  describe 'Associations' do
+    it { is_expected.to have_many(:product_category_relationships).dependent(:destroy) }
+    it { is_expected.to have_many(:categories).through(:product_category_relationships) }
+  end
+
   describe 'Validation' do
     context 'Presence validation' do
       it { is_expected.to validate_presence_of(:name) }
