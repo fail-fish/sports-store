@@ -13,4 +13,9 @@
  *= require_self
  *= require bootstrap-custom
  *= require static_pages
+ *= require karma
  */
+
+ .main-content {
+   padding-top: 120px;
+ }

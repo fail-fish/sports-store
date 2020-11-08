@@ -1,0 +1,59 @@
+footer.footer-area.section_gap
+  .container
+    .row
+      .col-lg-3.col-md-6.col-sm-6
+        .single-footer-widget
+          h6 About Us
+          p
+            | Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore dolore
+            | magna aliqua.
+      .col-lg-4.col-md-6.col-sm-6
+        .single-footer-widget
+          h6 Newsletter
+          p Stay update with our latest
+          #mc_embed_signup
+            form.form-inline action="https://spondonit.us12.list-manage.com/subscribe/post?u=1462626880ade1ac87bd9c93a&amp;id=92a4423d01" method="get" novalidate="true" target="_blank" 
+              .d-flex.flex-row
+                input.form-control name="EMAIL" onblur=("this.placeholder = 'Enter Email '") onfocus=("this.placeholder = ''") placeholder=("Enter Email") required="" type="email"
+                button.click-btn.btn.btn-default
+                  i.fa.fa-long-arrow-right aria-hidden="true" 
+                div style=("position: absolute; left: -5000px;") 
+                  input name="b_36c4fd991d266f23781ded980_aefe40901a" tabindex="-1" type="text" value=""
+              .info
+      .col-lg-3.col-md-6.col-sm-6
+        .single-footer-widget.mail-chimp
+          h6.mb-20 Instragram Feed
+          ul.instafeed.d-flex.flex-wrap
+            li
+              = image_tag "i1.jpg"
+            li
+              = image_tag "i2.jpg"
+            li
+              = image_tag "i3.jpg"
+            li
+              = image_tag "i4.jpg"
+            li
+              = image_tag "i5.jpg"
+            li
+              = image_tag "i6.jpg"
+            li
+              = image_tag "i7.jpg"
+            li
+              = image_tag "i8.jpg"
+      .col-lg-2.col-md-6.col-sm-6
+        .single-footer-widget
+          h6 Follow Us
+          p Let us be social
+          .footer-social.d-flex.align-items-center
+            a href="#" 
+              = icon 'fab', 'facebook-f'
+            a href="#"
+              = icon 'fab', 'twitter'
+            a href="#"
+              = icon 'fab', 'youtube'
+            a href="#" 
+              = icon 'fab', 'twitch'
+    .footer-bottom.d-flex.justify-content-center.align-items-center.flex-wrap
+      p.footer-text.m-0
+        | &copy 2020 Copyright:
+        = link_to ' Sports store', root_path
