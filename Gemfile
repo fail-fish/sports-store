@@ -8,6 +8,8 @@ gem 'rails', '~> 5.2.4', '>= 5.2.4.3'
 gem 'bootsnap', '>= 1.1.0', require: false
 gem 'puma', '~> 3.11'
 
+gem 'devise'
+
 gem 'bootstrap'
 gem 'jquery-rails'
 gem 'sass-rails', '~> 5.0'
