@@ -1,0 +1,48 @@
+header.header_area.sticky-header
+  .main_menu
+    nav.navbar.navbar-expand-lg.navbar-light.main_box
+      .container
+        = link_to  "Sports store", root_path, class: 'navbar-brand logo_h'
+        /! Collect the nav links, forms, and other content for toggling
+        #navbarSupportedContent.collapse.navbar-collapse.offset
+          ul.nav.navbar-nav.menu_nav.ml-auto
+            li class="#{active_class(root_path)}"
+              = link_to 'Home', root_path, class: 'nav-link'
+            li.nav-item.submenu.dropdown
+              a.nav-link.dropdown-toggle aria-expanded="false" aria-haspopup="true" data-toggle="dropdown" href="#" role="button"  Shop
+              ul.dropdown-menu
+                li.nav-item
+                  a.nav-link href="#"  Shop Category
+                li.nav-item
+                  a.nav-link href="#"  Product Details
+                li.nav-item
+                  a.nav-link href="#"  Product Checkout
+                li.nav-item
+                  a.nav-link href="#"  Shopping Cart
+                li.nav-item
+                  a.nav-link href="#"  Confirmation
+            li.nav-item.submenu.dropdown
+              a.nav-link.dropdown-toggle aria-expanded="false" aria-haspopup="true" data-toggle="dropdown" href="#" role="button"  Blog
+              ul.dropdown-menu
+                li.nav-item
+                  a.nav-link href="#"  Blog
+                li.nav-item
+                  a.nav-link href="#"  Blog Details
+            li.nav-item.submenu.dropdown
+              a.nav-link.dropdown-toggle aria-expanded="false" aria-haspopup="true" data-toggle="dropdown" href="#" role="button"  Pages
+              ul.dropdown-menu
+                li.nav-item
+                  a.nav-link href="#"  Login
+                li.nav-item
+                  a.nav-link href="#"  Tracking
+                li.nav-item
+                  a.nav-link href="#"  Elements
+            li.nav-item
+              a.nav-link href="#"  Contact
+          ul.nav.navbar-nav.navbar-right
+            li.nav-item
+              a.cart href="#" 
+                = icon 'fas', 'archive'
+            li.nav-item
+              button.search
+                span#search.lnr.lnr-magnifier
