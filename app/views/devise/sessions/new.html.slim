@@ -1,0 +1,39 @@
+section.login_box_area.section_gap
+  .container
+    .row
+      .col-lg-6
+        .login_box_img
+          = image_tag "login.jpg", class: "img-fluid"
+          .hover
+            h4 New to our website?
+            p There are advances being made in science and technology everyday, and a good example of this is the
+            = link_to "Create an Account", new_user_registration_path, class: 'primary-btn'
+      .col-lg-6
+        .login_form_inner
+          h3 Log in to enter
+          = form_for(resource, as: resource_name, 
+                     url: session_path(resource_name),
+                    html: { class: "row login_form" }) do |f|
+
+            .col-md-12.form-group
+              = f.email_field :email, id: "name",
+                                      class: "form-control",
+                                      onblur:"this.placeholder = 'Email'",
+                                      onfocus: "this.placeholder = ''",
+                                      placeholder: "Email"
+
+            .col-md-12.form-group
+              = f.password_field :password, id: "name",
+                                            class: "form-control",
+                                            onblur:"this.placeholder = 'Password'",
+                                            onfocus: "this.placeholder = ''",
+                                            placeholder: "Password"
+
+            - if devise_mapping.rememberable?
+              .col-md-12.form-group.pt-3
+                .creat_account
+                  = f.check_box :remember_me, id: "f-option2", name: "selector"
+                  = f.label :remember_me, "Keep me logged in"
+            .col-md-12.form-group.pt-2
+              = f.submit "Log in", class: "primary-btn"
+              = link_to "Forgot your password?", new_password_path(resource_name)

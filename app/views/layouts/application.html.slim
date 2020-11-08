@@ -12,4 +12,5 @@ html
     .main-content
       = yield
 
+    = any_login_here if defined?(AnyLogin)
     = render 'layouts/footer'
