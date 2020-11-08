@@ -21,28 +21,11 @@ header.header_area.sticky-header
                   a.nav-link href="#"  Shopping Cart
                 li.nav-item
                   a.nav-link href="#"  Confirmation
-            li.nav-item.submenu.dropdown
-              a.nav-link.dropdown-toggle aria-expanded="false" aria-haspopup="true" data-toggle="dropdown" href="#" role="button"  Blog
-              ul.dropdown-menu
-                li.nav-item
-                  a.nav-link href="#"  Blog
-                li.nav-item
-                  a.nav-link href="#"  Blog Details
-            li.nav-item.submenu.dropdown
-              a.nav-link.dropdown-toggle aria-expanded="false" aria-haspopup="true" data-toggle="dropdown" href="#" role="button"  Pages
-              ul.dropdown-menu
-                li.nav-item
-                  a.nav-link href="#"  Login
-                li.nav-item
-                  a.nav-link href="#"  Tracking
-                li.nav-item
-                  a.nav-link href="#"  Elements
             li.nav-item
               a.nav-link href="#"  Contact
-          ul.nav.navbar-nav.navbar-right
-            li.nav-item
-              a.cart href="#" 
-                = icon 'fas', 'archive'
-            li.nav-item
-              button.search
-                span#search.lnr.lnr-magnifier
+            - if user_signed_in?
+              li.nav-item
+                = link_to 'Log out', destroy_user_session_path, class: 'nav-link', method: :delete
+            - else
+              li.nav-item
+                = link_to 'Login', new_user_session_path, class: 'nav-link'

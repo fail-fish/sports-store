@@ -1,0 +1,37 @@
+section.login_box_area.section_gap
+  .container
+    .row
+      .col-lg-6
+        .login_box_img
+          = image_tag "registation", class: "img-fluid"
+      .col-lg-6
+        .login_form_inner
+          h3 Sign up
+          = form_for(resource, as: resource_name, 
+                     url: registration_path(resource_name),
+                    html: { class: "row login_form" }) do |f|
+
+            .col-md-12.form-group
+              = f.email_field :email, id: "name",
+                                      class: "form-control",
+                                      onblur:"this.placeholder = 'Email'",
+                                      onfocus: "this.placeholder = ''",
+                                      placeholder: "Email"
+
+            .col-md-12.form-group.mt-4
+              = f.password_field :password, id: "name",
+                                            class: "form-control",
+                                            onblur:"this.placeholder = 'New password'",
+                                            onfocus: "this.placeholder = ''",
+                                            placeholder: "New password"
+            
+            .col-md-12.form-group
+              = f.password_field :password_confirmation, id: "name",
+                                                         class: "form-control",
+                                                         onblur:"this.placeholder = 'New password confirmation'",
+                                                         onfocus: "this.placeholder = ''",
+                                                         placeholder: "New password confirmation"
+
+            .col-md-12.form-group.mt-4
+              = f.submit "Sign up", class: "primary-btn"
+              = render "devise/shared/links"
