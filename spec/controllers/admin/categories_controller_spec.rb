@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe Admin::CategoriesController, type: :controller do
-  let!(:category) { create(:category, :with_products) }
+  let!(:category) { create(:category) }
   let!(:admin) { create(:admin) }
 
   before do
@@ -28,7 +28,7 @@ RSpec.describe Admin::CategoriesController, type: :controller do
       get :new
     end
 
-    it 'Initiales empty review object' do
+    it 'Initiales empty category object' do
       expect(assigns(:category)).to be_a_new(Category)
     end
 
@@ -60,7 +60,7 @@ RSpec.describe Admin::CategoriesController, type: :controller do
       end.to change(Category, :count).by(1)
     end
 
-    it 'redirects to the categories path' do
+    it 'Redirects to the categories path' do
       post :create, params: { category: { name: 'category' } }
 
       is_expected.to set_flash[:notice]
@@ -73,7 +73,7 @@ RSpec.describe Admin::CategoriesController, type: :controller do
       patch :update, params: { id: category.id, category: { name: 'category' } }
     end
 
-    it 'redirects to the categories path' do
+    it 'Redirects to the categories path' do
       is_expected.to set_flash[:notice]
       is_expected.to redirect_to(admin_categories_path)
     end
