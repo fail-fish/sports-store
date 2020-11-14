@@ -9,6 +9,7 @@ class Admin::ProductsController < ApplicationController
     @product = Product.new
   end
 
+  # rubocop:disable Metrics/MethodLength
   def create
     @product = Product.new(product_params)
 
@@ -30,6 +31,7 @@ class Admin::ProductsController < ApplicationController
     product
   end
 
+  # rubocop:disable Metrics/AbcSize
   def update
     if product.update(product_params)
       product.product_category_relationships.destroy_all
@@ -45,6 +47,7 @@ class Admin::ProductsController < ApplicationController
       render :edit
     end
   end
+  # rubocop:enable Metrics/MethodLength, Metrics/AbcSize
 
   def destroy
     product.destroy
