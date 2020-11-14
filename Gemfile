@@ -43,6 +43,7 @@ group :test do
   gem 'database_cleaner-active_record'
   gem 'rails-controller-testing'
   gem 'shoulda-matchers', '~> 4.0'
+  gem 'simplecov', require: false
 end
 
 group :production do
