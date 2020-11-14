@@ -2,6 +2,11 @@ require 'rails_helper'
 
 RSpec.describe CategoriesController, type: :controller do
   let!(:category) { create(:category, :with_products) }
+  let!(:user) { create(:user) }
+
+  before do
+    sign_in user
+  end
 
   describe 'GET #show' do
     before do
