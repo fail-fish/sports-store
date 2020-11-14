@@ -16,6 +16,7 @@ gem 'font-awesome-sass', '~> 5.13.0'
 gem 'jquery-rails'
 gem 'sass-rails', '~> 5.0'
 gem 'slim-rails'
+gem 'simple_form'
 gem 'uglifier', '>= 1.3.0'
 
 gem 'factory_bot_rails'
