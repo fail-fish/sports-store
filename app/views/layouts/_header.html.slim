@@ -26,6 +26,16 @@ header.header_area.sticky-header
             - if user_signed_in?
               li.nav-item
                 = link_to 'Log out', destroy_user_session_path, class: 'nav-link', method: :delete
+            - elsif admin_signed_in?
+              li.nav-item.submenu.dropdown
+                a.nav-link.dropdown-toggle aria-expanded="false" aria-haspopup="true" data-toggle="dropdown" href="#" role="button"  Admin
+                ul.dropdown-menu
+                  li.nav-item
+                    = link_to  "Categories", admin_categories_path, class: 'nav-link'
+                  li.nav-item
+                    = link_to  "Products", admin_products_path, class: 'nav-link'
+              li.nav-item
+                = link_to 'Log out', destroy_admin_session_path, class: 'nav-link', method: :delete
             - else
               li.nav-item
                 = link_to 'Login', new_user_session_path, class: 'nav-link'
