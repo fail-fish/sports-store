@@ -15,6 +15,7 @@ gem 'bootstrap'
 gem 'font-awesome-sass', '~> 5.13.0'
 gem 'jquery-rails'
 gem 'sass-rails', '~> 5.0'
+gem 'simple_form'
 gem 'slim-rails'
 gem 'uglifier', '>= 1.3.0'
 

@@ -1,0 +1,8 @@
+section.admin-categories
+  h1.jumbotron Admin | New Category
+
+  .container
+    = render  "form", category: @category
+
+    .mt-3
+      = link_to  "Back to Category List", admin_categories_path
