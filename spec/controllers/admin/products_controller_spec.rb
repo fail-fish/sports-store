@@ -5,7 +5,9 @@ RSpec.describe Admin::ProductsController, type: :controller do
   let(:products) { category.products }
   let(:product) { products.first }
   let!(:admin) { create(:admin) }
-  let(:product_params) { FactoryBot.attributes_for(:product).merge(category_ids: [category.id]) }
+  let(:product_params) do
+    FactoryBot.attributes_for(:product).merge(category_ids: [category.id])
+  end
 
   before do
     sign_in admin

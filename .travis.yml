@@ -1,0 +1,17 @@
+dist: xenial
+language: ruby
+rvm:
+  - 2.5.5
+cache:
+  bundler: true
+install:
+  - travis_retry nvm install v14.4.0
+  - bundle
+before_script:
+  - rake db:setup
+script:
+  - bundle exec rubocop --require rubocop-rails
+  - bundle exec rspec
+services:
+  - postgresql
+  - xvfb

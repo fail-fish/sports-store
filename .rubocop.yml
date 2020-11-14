@@ -10,11 +10,21 @@ Metrics/BlockLength:
   Exclude:
     - "lib/tasks/**/*"
     - "spec/**/*"
+    - "config/initializers/simple_form_bootstrap.rb"
+    - "db/**/*"
+
+Metrics/MethodLength:
+  Exclude:
+    - "db/migrate/*"
 
 Layout/LineLength:
   Max: 90
   IgnoredPatterns:
     - '\A(\s)*#'
+  Exclude:
+    - "db/**/*"
+    - "config/initializers/simple_form.rb"
+    - "config/initializers/simple_form_bootstrap.rb"
 
 Rails/FilePath:
   Enabled: false
