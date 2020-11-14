@@ -8,7 +8,9 @@ install:
   - travis_retry nvm install v14.4.0
   - bundle
 before_script:
-  - rake db:setup
+  - rake db:create
+  - rake db:migrate
+  - rake db:seed
 script:
   - bundle exec rubocop --require rubocop-rails
   - bundle exec rspec
