@@ -1,7 +1,9 @@
-h1.jumbotron Edit a Product
+section.admin-products
+  h1.jumbotron Admin | Edit Product
 
-.container
-  = render  "form", product: @product
+  .container
+    = render  "form", product: @product
 
-= link_to  "Back to Product List", admin_products_path
- 
+    .mt-2
+      = link_to  "Back to Product List", admin_products_path
+  
