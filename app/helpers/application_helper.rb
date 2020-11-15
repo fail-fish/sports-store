@@ -4,6 +4,6 @@ module ApplicationHelper
   end
 
   def user_has_products_in_carts?
-    current_user.cart_count > 0
+    current_user.cart_count.positive?
   end
 end

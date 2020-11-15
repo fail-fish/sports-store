@@ -8,7 +8,7 @@ RSpec.describe ApplicationHelper, type: :helper do
   end
 
   describe '.active_class' do
-    let(:link_path) { '127.11.21/home'}
+    let(:link_path) { '127.11.21/home' }
     let(:url_helper) { ActionView::Helpers::UrlHelper }
 
     context 'Link path is current' do
@@ -46,7 +46,5 @@ RSpec.describe ApplicationHelper, type: :helper do
     end
   end
 
-  def current_user
-    @current_user
-  end
+  attr_reader :current_user
 end
