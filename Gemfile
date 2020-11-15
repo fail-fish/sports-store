@@ -8,6 +8,9 @@ gem 'rails', '~> 5.2.4', '>= 5.2.4.3'
 gem 'bootsnap', '>= 1.1.0', require: false
 gem 'puma', '~> 3.11'
 
+gem 'hiredis'
+gem 'redis', '~> 3.0.1'
+
 gem 'any_login'
 gem 'devise'
 
@@ -41,6 +44,7 @@ end
 group :test do
   gem 'capybara'
   gem 'database_cleaner-active_record'
+  gem 'mock_redis'
   gem 'rails-controller-testing'
   gem 'shoulda-matchers', '~> 4.0'
   gem 'simplecov', require: false

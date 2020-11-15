@@ -1,3 +1,5 @@
-.container
-  .row
-    = render partial: "shared/product", collection: @products 
+section.products
+  h1.jumbotron Products
+  .container
+    .row
+      = render partial: "shared/product", collection: @products 

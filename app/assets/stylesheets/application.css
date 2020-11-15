@@ -13,6 +13,8 @@
  *= require_self
  *= require bootstrap-custom
  *= require static_pages
+ *= require products
+ *= require carts
  *= require admin/categories
  *= require admin/products
  *= require karma
