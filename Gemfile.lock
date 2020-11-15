@@ -105,7 +105,7 @@ GEM
       sassc (>= 1.11)
     globalid (0.4.2)
       activesupport (>= 4.2.0)
-    hiredis (0.4.5)
+    hiredis (0.6.3)
     i18n (1.8.5)
       concurrent-ruby (~> 1.0)
     jquery-rails (4.4.0)
@@ -300,7 +300,7 @@ DEPENDENCIES
   factory_bot_rails
   faker!
   font-awesome-sass (~> 5.13.0)
-  hiredis (~> 0.4.5)
+  hiredis
   jquery-rails
   listen (>= 3.0.5, < 3.2)
   pg (~> 0.18.4)

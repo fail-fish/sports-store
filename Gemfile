@@ -9,7 +9,7 @@ gem 'bootsnap', '>= 1.1.0', require: false
 gem 'puma', '~> 3.11'
 
 gem "redis", "~> 3.0.1"
-gem "hiredis", "~> 0.4.5"
+gem "hiredis"
 
 gem 'any_login'
 gem 'devise'
