@@ -7,7 +7,9 @@ gem 'rails', '~> 5.2.4', '>= 5.2.4.3'
 
 gem 'bootsnap', '>= 1.1.0', require: false
 gem 'puma', '~> 3.11'
-gem 'redis'
+
+gem "redis", "~> 3.0.1"
+gem "hiredis", "~> 0.4.5"
 
 gem 'any_login'
 gem 'devise'
