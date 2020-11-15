@@ -18,6 +18,13 @@
 #
 require 'rails_helper'
 
-RSpec.describe User, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+RSpec.describe User, type: :model, redis_mock: true do
+  let!(:user) { create(:user) }
+  let(:product_id) { 'product_id' }
+
+  describe '.current_user_cart' do
+    it 'Returns string whith user id' do
+      expect(user.current_user_cart).to eq("cart#{user.id}")
+    end
+  end
 end
