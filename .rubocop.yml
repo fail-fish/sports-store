@@ -26,6 +26,18 @@ Layout/LineLength:
     - "config/initializers/simple_form.rb"
     - "config/initializers/simple_form_bootstrap.rb"
 
+Style/NumericLiterals:
+  Exclude:
+    - "db/schema.rb"
+
+Layout/EmptyLinesAroundBlockBody:
+  Exclude:
+    - "db/schema.rb"
+
+Style/StringLiterals:
+  Exclude:
+    - "db/schema.rb"
+
 Rails/FilePath:
   Enabled: false
 
