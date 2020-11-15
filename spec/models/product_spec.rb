@@ -15,6 +15,8 @@ RSpec.describe Product, type: :model do
   describe 'Associations' do
     it { is_expected.to have_many(:product_category_relationships).dependent(:destroy) }
     it { is_expected.to have_many(:categories).through(:product_category_relationships) }
+    it { is_expected.to have_many(:orders).dependent(:destroy) }
+    it { is_expected.to have_many(:users).through(:orders) }
   end
 
   describe 'Validation' do

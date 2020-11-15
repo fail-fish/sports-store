@@ -22,6 +22,11 @@ RSpec.describe User, type: :model, redis_mock: true do
   let!(:user) { create(:user) }
   let(:product_id) { 'product_id' }
 
+  describe 'Associations' do
+    it { is_expected.to have_many(:orders).dependent(:destroy) }
+    it { is_expected.to have_many(:products).through(:orders) }
+  end
+
   describe '.current_user_cart' do
     it 'Returns string whith user id' do
       expect(user.current_user_cart).to eq("cart#{user.id}")
