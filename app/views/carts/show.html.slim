@@ -30,3 +30,6 @@ section.carts
             td
               h5 = @cart_total
             td
+
+    - unless current_user.cart_products_with_qty.blank?
+      = link_to 'Checkout', new_transaction_path, class: 'btn btn-success'
