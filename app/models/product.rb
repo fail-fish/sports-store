@@ -12,6 +12,8 @@
 class Product < ApplicationRecord
   has_many :product_category_relationships, dependent: :destroy
   has_many :categories, through: :product_category_relationships
+  has_many :orders, dependent: :destroy
+  has_many :users, through: :orders
 
   validates :name, presence: true, length: { in: 2..160 }
   validates :description, presence: true, length: { maximum: 250 }

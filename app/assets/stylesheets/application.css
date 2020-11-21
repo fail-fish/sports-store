@@ -15,7 +15,9 @@
  *= require static_pages
  *= require products
  *= require carts
+ *= require transactions
  *= require admin/categories
+ *= require admin/orders
  *= require admin/products
  *= require karma
  */

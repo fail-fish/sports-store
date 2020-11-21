@@ -6,6 +6,8 @@ ruby '2.5.5'
 gem 'rails', '~> 5.2.4', '>= 5.2.4.3'
 
 gem 'bootsnap', '>= 1.1.0', require: false
+gem 'figaro'
+gem 'gon', '~> 6.2.0'
 gem 'puma', '~> 3.11'
 
 gem 'hiredis'
@@ -13,6 +15,8 @@ gem 'redis', '~> 3.0.1'
 
 gem 'any_login'
 gem 'devise'
+
+gem 'braintree', '~> 2.33.1'
 
 gem 'bootstrap'
 gem 'font-awesome-sass', '~> 5.13.0'
