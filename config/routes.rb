@@ -13,9 +13,12 @@ Rails.application.routes.draw do
     put 'remove_one/:product_id', to: 'carts#removeone', as: :remove_one
   end
 
+  resources :transactions, only: %i[new create]
+
   namespace :admin do
     root to: 'products#index'
     resources :products, except: %i[show]
     resources :categories, except: %i[show]
+    resources :orders, only: %i[index]
   end
 end

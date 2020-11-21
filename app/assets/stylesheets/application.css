@@ -16,6 +16,7 @@
  *= require products
  *= require carts
  *= require admin/categories
+ *= require admin/orders
  *= require admin/products
  *= require karma
  */

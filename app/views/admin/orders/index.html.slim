@@ -1,0 +1,14 @@
+section.admin-orders
+  h1.jumbotron Admin | Users orders
+
+  .container
+    .row
+      .col-12.card
+        table.table
+          thead
+            th User
+            th Product
+            th Quantity
+            th Order Time
+          tbody
+            = render partial: 'admin_order', collection: @orders

@@ -13,7 +13,7 @@ FactoryBot.define do
 
     trait :with_products do
       after(:build) do |category|
-        category.products = build_list(:product, 5)
+        category.products = build_list(:product, 10)
       end
     end
   end
