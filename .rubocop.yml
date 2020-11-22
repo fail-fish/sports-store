@@ -55,3 +55,7 @@ Style/ClassAndModuleChildren:
 
 Rails/RakeEnvironment:
   Enabled: false
+
+Style/WordArray:
+  Exclude:
+    - "db/schema.rb"

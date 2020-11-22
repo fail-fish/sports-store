@@ -34,5 +34,15 @@ RSpec.describe Product, type: :model do
     context 'Numericality validation' do
       it { is_expected.to validate_numericality_of(:price) }
     end
+
+    describe 'Image validation' do
+      it do
+        is_expected.to validate_content_type_of(:image_file).allowing('image/png',
+                                                                      'image/jpg',
+                                                                      'image/jpeg')
+      end
+
+      it { is_expected.to validate_size_of(:image_file).less_than(1.megabytes) }
+    end
   end
 end
