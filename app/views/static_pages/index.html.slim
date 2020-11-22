@@ -61,3 +61,14 @@ section.features-area.section_gap
             = image_tag "features/f-icon4.png"
           h6 Secure Payment
           p Free Shipping on all order
+
+section.latest_products
+  .container
+    .row.justify-content-center
+      .col-lg-6.text-center
+        .section-title
+          h1 Latest Products
+    .row
+      = render partial: "latest_product", collection: @latest_products, as: :latest_product
+  .justify-content-center.d-flex
+    = render partial: 'shared/pagination', locals: { pagy: @pagy }

@@ -1,0 +1,18 @@
+.col-lg-3.col-md-6
+  .single-product
+    = image_tag product_image_file(latest_product), class: 'img-fluid'
+    .product-details
+      h6
+        = latest_product.name
+      .price
+        h6
+          = latest_product.price
+      .prd-bottom
+        = link_to add_to_cart_path(latest_product), method: :put, class: 'social-info' do
+          span.ti-bag
+            i.fas.fa-cart-plus
+          p.hover-text Add to Bug
+        = link_to product_path(latest_product), class: 'social-info' do
+          span.lnr.lnr-move
+            i.fas.fa-info
+          p.hover-text View more

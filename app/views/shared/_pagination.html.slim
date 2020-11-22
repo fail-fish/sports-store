@@ -1,0 +1,26 @@
+- link = pagy_link_proc(pagy, 'class="page-link"')
+- current_link = pagy_link_proc(pagy)
+
+nav.blog-pagination.justify-content-center.d-flex
+  ul.pagination role="navigation" aria-label="pager"
+
+    - if pagy.prev
+        li.page-item
+          == link.call(pagy.prev, '<i class="fas fa-chevron-left"></i>'.html_safe) do
+
+    - pagy.series.each do |item|       # series example: [1, :gap, 7, 8, "9", 10, 11, :gap, 36]
+      - if item.is_a?(Integer)         # page link
+        li.page-item
+          == link.call(item)
+
+      - elsif item.is_a?(String)       # current page
+        li.page-item.active
+          == link.call(item)
+
+      - elsif item == :gap             # page gap
+        span.page.gap!= pagy_t('pagy.nav.gap')
+
+    - if pagy.next
+      span.page.next!= link.call(pagy.next, pagy_t('pagy.nav.next'), 'aria-label="next"')
+    - else
+      span.page.next.disabled!= pagy_t('pagy.nav.next')
