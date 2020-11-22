@@ -1,4 +1,6 @@
 module ApplicationHelper
+  include Pagy::Frontend
+
   def active_class(link_path)
     current_page?(link_path) ? 'nav-item active' : 'nav-item'
   end

@@ -9,6 +9,7 @@ gem 'active_storage_validations'
 gem 'bootsnap', '>= 1.1.0', require: false
 gem 'figaro'
 gem 'gon', '~> 6.2.0'
+gem 'pagy', '~> 3.5'
 gem 'puma', '~> 3.11'
 
 gem 'hiredis'
