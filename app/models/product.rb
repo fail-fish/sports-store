@@ -15,7 +15,16 @@ class Product < ApplicationRecord
   has_many :orders, dependent: :destroy
   has_many :users, through: :orders
 
+  has_one_attached :image_file
+
+  validates :image_file,
+            content_type: %w[image/png image/jpg image/jpeg],
+            size: { less_than: 1.megabytes,
+                    message: 'is not given between size' }
+
   validates :name, presence: true, length: { in: 2..160 }
   validates :description, presence: true, length: { maximum: 250 }
   validates :price, presence: true, numericality: true
+
+  scope :latest, -> { order(created_at: :desc) }
 end
