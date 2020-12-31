@@ -1,50 +1,21 @@
-class Admin::CategoriesController < ApplicationController
+class Admin::CategoriesController < InheritedResources::Base
   before_action :authenticate_admin!
 
-  def index
-    @categories = Category.all
-  end
-
-  def new
-    @category = Category.new
-  end
+  respond_to :html
 
   def create
-    @category = Category.new(category_params)
-
-    if @category.save
-      flash[:notice] = 'Category added!'
-      redirect_to admin_categories_path
-    else
-      flash[:notice] = "Category can't be blank!"
-      render 'admin/products/new'
-    end
-  end
-
-  def edit
-    category
+    create!(notice: 'Category added!') { admin_categories_path }
   end
 
   def update
-    if category.update(category_params)
-      flash[:notice] = 'Category updated!'
-      redirect_to admin_categories_path
-    else
-      render :edit
-    end
+    update!(notice: 'Category updated!') { admin_categories_path }
   end
 
   def destroy
-    category.destroy
-    flash[:notice] = 'Category removed!'
-    redirect_to admin_categories_path
+    destroy!(notice: 'Category removed!') { admin_categories_path }
   end
 
   private
-
-  def category
-    @category ||= Category.find(params[:id])
-  end
 
   def category_params
     params.require(:category).permit(:name)

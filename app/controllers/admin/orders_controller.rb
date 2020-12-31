@@ -1,7 +1,5 @@
-class Admin::OrdersController < ApplicationController
+class Admin::OrdersController < InheritedResources::Base
   before_action :authenticate_admin!
 
-  def index
-    @orders = Order.all
-  end
+  actions :index
 end
