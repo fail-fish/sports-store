@@ -18,6 +18,8 @@ gem 'redis', '~> 3.0.1'
 gem 'any_login'
 gem 'devise'
 
+gem 'inherited_resources'
+
 gem 'braintree', '~> 2.33.1'
 
 gem 'bootstrap'
