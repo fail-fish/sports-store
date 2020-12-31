@@ -1,11 +1,5 @@
-class ProductsController < ApplicationController
+class ProductsController < InheritedResources::Base
   before_action :authenticate_user!
 
-  def index
-    @products = Product.all
-  end
-
-  def show
-    @product = Product.find(params[:id])
-  end
+  actions :index, :show
 end
