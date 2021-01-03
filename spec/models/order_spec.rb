@@ -2,18 +2,22 @@
 #
 # Table name: orders
 #
-#  id         :integer          not null, primary key
+#  id         :bigint           not null, primary key
 #  quantity   :integer
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
-#  product_id :integer
-#  user_id    :integer
+#  product_id :bigint
+#  user_id    :bigint
 #
 # Indexes
 #
-#  index_orders_on_product_and_user  (,)
-#  index_orders_on_product_id        (product_id)
-#  index_orders_on_user_id           (user_id)
+#  index_orders_on_product_id  (product_id)
+#  index_orders_on_user_id     (user_id)
+#
+# Foreign Keys
+#
+#  fk_rails_...  (product_id => products.id)
+#  fk_rails_...  (user_id => users.id)
 #
 require 'rails_helper'
 
