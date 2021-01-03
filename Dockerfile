@@ -1,4 +1,4 @@
-FROM ruby:2.5-alpine
+FROM ruby:2.5.5-alpine
 
 ENV BUNDLER_VERSION=1.16.6
 
