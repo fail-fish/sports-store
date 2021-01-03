@@ -30,8 +30,12 @@
 /public/assets
 .byebug_history
 
+/config/database.yml
 # Ignore master key for decrypting credentials and more.
 /config/master.key
 
 # Ignore generated files in the coverage directory.
 coverage/*
+
+.env
+init.sql

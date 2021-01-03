@@ -8,6 +8,7 @@ install:
   - travis_retry nvm install v14.4.0
   - bundle
 before_script:
+  - cp config/database.yml.travis config/database.yml
   - rake db:create
   - rake db:migrate
   - rake db:seed
